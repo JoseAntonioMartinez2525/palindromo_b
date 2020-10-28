@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width initial-scale=5.0">  
+<title>Ejercicio 8-Palindromos</title>
+</head>
+	<p>Esta página muestra el uso básico de funciones</p>
+<body>
+	<script type="text/javascript">
+	function palindromo(cadena) {
+  var resultado = "La cadena \""+cadena+"\" \n"
+
+  var cadenaOriginal = cadena.toLowerCase();
+
+  var letrasEspacios = cadenaOriginal.split("");
+  var cadenaSinEspacios = "";
+  for(i in letrasEspacios) {
+    if(letrasEspacios[i] != " ") {
+      cadenaSinEspacios += letrasEspacios[i];
+    }
+  }
+  var letras = cadenaSinEspacios.split("");
+  var letrasReves = cadenaSinEspacios.split("").reverse();
+
+
+  var iguales = true;
+  for(i in letras) {
+    if(letras[i] == letrasReves[i]) {
+ 
+    }
+    else {
+      
+      iguales = false;
+    }
+  }
+
+  if(iguales) {
+    resultado += " es un palíndromo";
+  }
+  else {
+    resultado += " no es un palíndromo";
+  }
+
+  return resultado;
+}
+
+prompt(palindromo("La ruta nos aporto otro paso natural"));
+prompt(palindromo("Esta frase no se parece a ningun palindromo"));
+
+	</script>
+	</body>
+</html>
